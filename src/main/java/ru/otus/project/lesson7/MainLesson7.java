@@ -12,7 +12,7 @@ public class MainLesson7 {
         int[][] matrix = {{1, 2, 3,}, {4, 5, 6}, {7, 8, 9}};
         zeroDiagonals(matrix);
         printMatrix(matrix);
-        int[][] arr = {{1, 3, 2, 8, 5}, {3, 6, 9, 2}};
+        int[][] arr = {{-8, -3, 2, 8, 5}, {3, 6, -9, 2}};
         findMax(arr);
         int[][] row2 = {{1, 2, 4}, {5, 8, 2}};
         countAndSumRow2(row2);
@@ -73,7 +73,7 @@ public class MainLesson7 {
     }
 
     public static int findMax(int[][] array) {
-        int max = 0;
+        int max = array[0][0];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (array[i][j] > max) {
