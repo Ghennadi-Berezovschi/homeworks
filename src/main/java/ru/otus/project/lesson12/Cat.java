@@ -3,7 +3,7 @@ package ru.otus.project.lesson12;
 public class Cat {
     private String name;
     private int appetite;
-    public boolean hungry;
+    private boolean hungry;
 
     public Cat(String name, int appetite) {
         this.name = name;
