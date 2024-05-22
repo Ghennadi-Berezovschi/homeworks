@@ -1,8 +1,8 @@
 package ru.otus.project.lesson11;
 
-public abstract class  Animal {
-    private String name;
-    private int speedRun;
+public abstract class Animal {
+    protected String name;
+    protected int speedRun;
     protected int endurance;
     protected int distance;
     protected int runCost;
@@ -14,7 +14,6 @@ public abstract class  Animal {
         this.endurance = endurance;
     }
 
-    public abstract void info();
 
     public int run(int distance) {
 
@@ -23,11 +22,15 @@ public abstract class  Animal {
 
         this.runCost = endurance - (distance * enduranceUnits);
         int time = distance / speedRun;
+
+
         if (runCost >= 0 && distance >= 0) {
-            System.out.println(time + "s");
+            endurance -= runCost;
+            System.out.println(name + " has " + endurance + "units  after running");
+            System.out.println(name + " run " + distance + "m " + "for " + time + "s");
             return time;
         } else {
-            System.out.println("Animal  is tired ");
+            System.out.println(name + " is tired and can not run");
         }
 
         return -1;
