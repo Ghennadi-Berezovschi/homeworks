@@ -14,13 +14,10 @@ public class Employee {
         System.out.println(getMinAgeEmployee(employees, 40));
         System.out.println(checkMidlAge(employees, 35));
         System.out.println(findYoungestEmployee(employees));
-
-
     }
 
     private String name;
     private int age;
-
 
     public Employee(String name, int age) {
         this.name = name;
@@ -36,21 +33,19 @@ public class Employee {
     }
 
     public static boolean checkMidlAge(List<Employee> employees, int minAveregeAge) {
-
         int totalAgeOfEmployees = 0;
         for (Employee employee : employees) {
             totalAgeOfEmployees += employee.getAge();
         }
         int averageAge = totalAgeOfEmployees / employees.size();
-
         return averageAge > minAveregeAge;
     }
 
     public static List<String> getMinAgeEmployee(List<Employee> employees, int minAge) {
         List<String> names = new ArrayList<>();
         for (Employee employee : employees) {
-
-            if (employee.getAge() >= minAge) {
+            int age = employee.getAge();
+            if (age >= minAge) {
                 names.add(employee.getName());
             }
         }
@@ -63,20 +58,16 @@ public class Employee {
             names.add(employee.getName());
         }
         return names;
-
     }
 
     public static Employee findYoungestEmployee(List<Employee> employees) {
-
         Employee youngest = employees.get(0);
-
+        int minAge = youngest.getAge();
         for (Employee employee : employees) {
-
-            if (employee.getAge() < youngest.getAge()) {
+            int age = employee.getAge();
+            if (age < youngest.getAge()) {
                 youngest = employee;
             }
-
-
         }
         return youngest;
     }
