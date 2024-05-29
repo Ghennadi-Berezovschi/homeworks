@@ -71,7 +71,6 @@ public class Employee {
         }
         return youngest;
     }
-
     @Override
     public String toString() {
         return "Youngest employee{" +
@@ -79,5 +78,4 @@ public class Employee {
                 ", age=" + age +
                 '}';
     }
-
 }
