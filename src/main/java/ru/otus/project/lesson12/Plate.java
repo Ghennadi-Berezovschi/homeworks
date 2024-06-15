@@ -1,6 +1,7 @@
 package ru.otus.project.lesson12;
 
 public class Plate {
+
     private int maxFood;
     private int currentFood;
 
