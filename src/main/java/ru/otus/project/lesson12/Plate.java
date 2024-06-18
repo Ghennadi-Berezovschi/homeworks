@@ -17,6 +17,7 @@ public class Plate {
         }
         else return false;
     }
+
     public void addFood(int foodAmount) {
         if (currentFood + foodAmount <= maxFood) {
             currentFood += foodAmount;
