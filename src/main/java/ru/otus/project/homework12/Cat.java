@@ -1,4 +1,4 @@
-package ru.otus.project.lesson12;
+package ru.otus.project.homework12;
 
 public class Cat {
     private String name;
