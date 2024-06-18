@@ -11,10 +11,13 @@ public class CalcServer {
 
         while (true) {
             Socket clientSocket = serverSocket.accept();
-            System.out.println("Client connected");
 
             try (DataInputStream in = new DataInputStream(new BufferedInputStream(clientSocket.getInputStream()));
                  DataOutputStream out = new DataOutputStream(new BufferedOutputStream(clientSocket.getOutputStream()))) {
+                System.out.println("Client connected");
+                String availableOperations = "Available operations: +, -, *, /";
+                out.writeUTF(availableOperations);
+                out.flush();
 
                 double number1 = in.readDouble();
                 double number2 = in.readDouble();
@@ -50,7 +53,6 @@ public class CalcServer {
                 if (validOperation) {
                     out.writeUTF("Result is: " + result);
                 }
-
                 out.flush();
             } catch (IOException ex) {
                 ex.printStackTrace();

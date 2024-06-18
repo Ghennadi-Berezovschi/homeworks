@@ -13,6 +13,8 @@ public class ClientServer {
             DataInputStream in = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
             DataOutputStream out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
             Scanner scanner = new Scanner(System.in);
+            String availableOperations = in.readUTF();
+            System.out.println(availableOperations);
 
             System.out.println("Enter a first number: ");
             double number1 = scanner.nextDouble();
